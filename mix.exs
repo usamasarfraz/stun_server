@@ -19,7 +19,7 @@ defmodule StunServer.MixProject do
   def application do
     [
       mod: {StunServer.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools,:stun]
     ]
   end
 
@@ -41,7 +41,8 @@ defmodule StunServer.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.2"}
+      {:bandit, "~> 1.2"},
+      {:stun, "~> 1.2"}
     ]
   end
 

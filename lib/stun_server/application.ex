@@ -24,6 +24,7 @@ defmodule StunServer.Application do
     opts = [strategy: :one_for_one, name: StunServer.Supervisor]
     supervisor_resp = Supervisor.start_link(children, opts)
     IO.inspect("-------------------------------------- Put Your Stun Port Code Here! --------------------------------------")
+    :stun_listener.add_listener({127, 0, 0, 1}, 3478, :udp, [])
     supervisor_resp
   end
 
